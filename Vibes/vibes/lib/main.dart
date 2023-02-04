@@ -1,6 +1,8 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:provider/provider.dart';
+import 'package:vibes/google_map.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,10 +37,12 @@ class MyHomePage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
 
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          Text('A random idea:'),
-          Text(appState.current.asLowerCase),
+          Expanded(child: GoogleMap()),
+          // Spacer(),
+          // Center(child: Text("Vibes")),
+          // Spacer(),
         ],
       ),
     );
