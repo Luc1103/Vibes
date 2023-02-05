@@ -9,15 +9,26 @@ class Directions {
   final String totalDuration;
 
   const Directions({
-    @required this.bounds,
-    @required this.polylinePoints,
-    @required this.totalDistance,
-    @required this.totalDuration,
+    required this.bounds,
+    required this.polylinePoints,
+    required this.totalDistance,
+    required this.totalDuration,
   });
 
   factory Directions.fromMap(Map<String, dynamic> map) {
     // Check if route is not available
-    if ((map['routes'] as List).isEmpty) return null;
+    //TODO: Check if route is not available
+    if ((map['routes'] as List).isEmpty) {
+      return Directions(
+        bounds: LatLngBounds(
+          northeast: const LatLng(0, 0),
+          southwest: const LatLng(0, 0),
+        ),
+        polylinePoints: const [],
+        totalDistance: '',
+        totalDuration: '',
+      );
+    }
 
     // Get route information
     final data = Map<String, dynamic>.from(map['routes'][0]);
