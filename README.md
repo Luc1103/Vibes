@@ -6,6 +6,8 @@ ICHACK 2023
 
 Vibes is a navigational wristband system which guides you to your destination, as inputed via a Flutter app running the Google Maps API, using vibrations on your wrists. 
 
+You can see a demo here : https://youtu.be/3VCT6xzchRs 
+
 ## Who is it for?
 
 We think our product would be helpful for a variety of people. Here are the main people we feel can benefit
